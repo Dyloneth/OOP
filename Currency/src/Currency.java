@@ -1,10 +1,9 @@
 public abstract class Currency {
-    protected double convertRateToCAD;
 
-    public Currency(double convertRateToCAD) {
-        this.convertRateToCAD = convertRateToCAD;
-    }
+    protected double toUSD;
+    protected double toEUR;
+    protected double toGBP;
+    protected double toCAD;
 
-    public abstract double convertToCAD(double amount);
-    public abstract double convertFromCAD(double amount);
+    public abstract double convert(Currency targetCurrency, double amount);
 }

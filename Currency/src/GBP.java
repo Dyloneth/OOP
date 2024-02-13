@@ -1,15 +1,14 @@
-public class GBP extends Currency{
-    public GBP(double convertRateToCAD) {
-        super(convertRateToCAD);
+public class GBP extends Currency {
+
+    public GBP() {
+        this.toCAD = 1.70;
+        this.toUSD = 1.26;
+        this.toEUR = 1.17;
+        this.toGBP = 1.0;
     }
 
     @Override
-    public double convertToCAD(double amount) {
-        return amount * convertRateToCAD;
-    }
-
-    @Override
-    public double convertFromCAD(double amount) {
-        return amount / convertRateToCAD;
+    public double convert(Currency targetCurrency, double amount) {
+        return amount / this.toCAD * targetCurrency.toCAD;
     }
 }

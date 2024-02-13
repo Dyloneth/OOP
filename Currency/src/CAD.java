@@ -1,15 +1,14 @@
-public class CAD extends Currency{
-    public CAD(double convertRateToCAD) {
-        super(convertRateToCAD);
+public class CAD extends Currency {
+
+    public CAD() {
+        this.toCAD = 1.0;
+        this.toUSD = 0.74;
+        this.toEUR = 0.69;
+        this.toGBP = 0.59;
     }
 
     @Override
-    public double convertToCAD(double amount) {
-        return amount;
-    }
-
-    @Override
-    public double convertFromCAD(double amount) {
-        return amount;
+    public double convert(Currency targetCurrency, double amount) {
+        return amount / this.toCAD * targetCurrency.toCAD;
     }
 }
